@@ -4,7 +4,7 @@
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=misternegative21&label=Profile%20views&color=0e75b6&style=flat" alt="misternegative21" /> </p>
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=misternegative21" alt="misternegative21" /></a> </p>
-<img align="right" alt="Coding" width="400" src="https://assets7.lottiefiles.com/private_files/lf30_WdTEui.json" >
+<img align="right" alt="Coding" width="400" src="https://raw.githubusercontent.com/MISTERNEGATIVE21/MISTERNEGATIVE21/master/dlf10_P0WCrcHw02.gif" >
 - 🔭 I’m currently working on **IOT JACKET**
 
 - 🌱 I’m currently learning **Electronics and Instrumentation**
