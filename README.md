@@ -33,13 +33,9 @@
 
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=misternegative21&" alt="misternegative21" /></p>
 
-![Metrics](https://metrics.lecoq.io/misternegative21)
 ## What I work, or am familiar with:
 
 ### The languages I use:
 
 [![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=misternegative21&layout=compact&langs_count=10&theme=chartreuse-dark)](https://github.com/anuraghazra/github-readme-stats)
 
-
-
-![My github activity graph](https://activity-graph.herokuapp.com/graph?username=misternegative21&theme=react-dark&custom_title=My%20Commits%20Graph%20&hide_border=true)
