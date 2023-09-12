@@ -5,7 +5,7 @@
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=misternegative21&theme=darkhub" alt="misternegative21" /></a> </p>
 <img align="right" alt="Coding" width="400" src="https://raw.githubusercontent.com/MISTERNEGATIVE21/MISTERNEGATIVE21/master/18123-developer.gif" >
-- 🔭 I’m currently working on **IOT JACKET**
+- 🔭 I’m currently working on **HID SOLE **
 
 - 🌱 I’m currently learning **Electronics and Instrumentation**
 
