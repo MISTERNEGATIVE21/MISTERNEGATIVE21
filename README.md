@@ -15,7 +15,7 @@
 
 - 📫 How to reach me **https://t.me/BURNINGFIREBLAZE**
 
-- 📄 Know about my experiences [http://rajarshimondal.me/my-cv/](http://rajarshimondal.me)
+- 📄 Know about my experiences [http://rajarshimondal.me ](http://rajarshimondal.me)
 
 - ⚡ Fun fact **BTW I USE ARCH**
 
