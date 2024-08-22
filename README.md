@@ -7,9 +7,9 @@
 <img align="right" alt="Coding" width="400" src="https://raw.githubusercontent.com/MISTERNEGATIVE21/MISTERNEGATIVE21/master/18123-developer.gif" >
 - 🔭 I’m Currently Interested in Making Custom VLSI Chip Design**
 
-- 🌱 I’m currently learning **Electronics and Instrumentation**
+- 🌱 I’m currently learning **VLSI DESIGN**
 
-- 👯 I’m looking to collaborate on **Embedded Systems or IIOT Projects**
+- 👯 I’m looking to collaborate on **Embedded Systems or Sensor Making Projects**
 
 - 🤝 I’m looking for help with **Rust**
 
