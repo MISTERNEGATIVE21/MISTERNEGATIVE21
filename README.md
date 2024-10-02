@@ -1,6 +1,7 @@
 <h1 align="center">Hi 👋, I'm Mister Negative</h1>
 <h3 align="center">A Passionate Developer from India</h3>
 
+<!-- Anime-themed Profile View Counter and Trophy -->
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=misternegative21&label=Profile%20views&color=brightgreen&style=flat-square" alt="Profile Views" />
   <a href="https://github.com/ryo-ma/github-profile-trophy">
@@ -8,7 +9,8 @@
   </a>
 </p>
 
-<img align="right" alt="Coding" width="400" src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif">
+<!-- Anime-Themed Coding GIF -->
+<img align="right" alt="Coding" width="400" src="https://media.giphy.com/media/6nuiJjOOQBBn2/giphy.gif">
 
 - 🔭 I’m Currently Interested in **Custom VLSI Chip Design**
 - 🌱 I’m currently learning **VLSI DESIGN**
@@ -49,8 +51,8 @@
   <a href="https://www.python.org/" target="_blank" rel="noreferrer">
     <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="python" />
   </a>
-  <a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=white" alt="c" />
+  <a href="https://www.verilog.com/" target="_blank" rel="noreferrer">
+    <img src="https://img.shields.io/badge/Verilog-00979D?style=for-the-badge&logo=verilog&logoColor=white" alt="verilog" />
   </a>
   <a href="https://git-scm.com/" target="_blank" rel="noreferrer">
     <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="git" />
@@ -106,8 +108,8 @@
 
 ### 💻 What I work on:
 
-- **Languages**: C, Python, Java, VLSI Design
-- **Tools**: Embedded Systems, Microcontrollers, Git, Linux
+- **Languages**: C, Python, Java, Verilog, VLSI Design
+- **Tools**: Embedded Systems, Docker, Microcontrollers, Git, Linux
 - **Collaboration**: Open to work on sensor-based projects, embedded systems, Rust-related development.
 
 ---
