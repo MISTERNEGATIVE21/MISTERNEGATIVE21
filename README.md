@@ -110,7 +110,7 @@
 
 - **Languages**: C, Python, Java, Verilog, VLSI Design
 - **Tools**: Embedded Systems, Docker, Microcontrollers, Git, Linux
-- **Collaboration**: Open to work on sensor-based projects, embedded systems, Rust-related development.
+- **Collaboration**: Open to work on sensor-based projects, embedded systems, RiscV-related development.
 
 ---
 
@@ -119,5 +119,6 @@
 - **VLSI Design**
 - **Embedded Systems**
 - **Custom Chip Design**
-- **Rust Programming**
+- **Playing Games**
 - **Linux Customization**
+- **Personal Cloud Solutions**
