@@ -10,7 +10,7 @@
 </p>
 
 <!-- Anime-Themed Coding GIF -->
-<img align="right" alt="Coding" width="400" src="https://raw.githubusercontent.com/MISTERNEGATIVE21/MISTERNEGATIVE21/refs/heads/master/tenor.gif">
+<img align="right" alt="Coding" width="300" src="https://raw.githubusercontent.com/MISTERNEGATIVE21/MISTERNEGATIVE21/refs/heads/master/tenor.gif">
 
 - 🔭 I’m Currently Interested in **Custom VLSI Chip Design**
 - 🌱 I’m currently learning **VLSI DESIGN**
