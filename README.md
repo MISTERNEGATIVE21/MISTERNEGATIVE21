@@ -28,7 +28,7 @@
 ### 🧑‍💻 **About Me**
       
 ```yaml
-name: Rajarshi Mondal
+name: Razor_C
 nickname: Mister Negative
 location: India 🇮🇳
 current_focus: Custom VLSI Chip Design
