@@ -143,7 +143,7 @@
       </rect>
     </g>
     <!-- L2 Cache label -->
-    <text x="60" y="135" text-anchor="middle" font-family="monospace" font-size="9" fill="#00d4aa">L2: 2MB</text>
+    <text x="60" y="135" text-anchor="middle" font-family="monospace" font-size="9" fill="#00d4aa">CPU CLUSTER / CACHE</text>
   </g>
   
   <!-- AI Accelerator -->
@@ -170,7 +170,7 @@
         </g>
       </g>
     </g>
-    <text x="60" y="135" text-anchor="middle" font-family="monospace" font-size="9" fill="#58a6ff">NPU: 512 TOPS</text>
+    <text x="60" y="135" text-anchor="middle" font-family="monospace" font-size="9" fill="#58a6ff">AI ACCELERATOR</text>
   </g>
   
   <!-- Memory Controller -->
@@ -196,10 +196,10 @@
           <animate attributeName="stroke-dasharray" values="5,5;10,10;5,5" dur="1.2s" repeatCount="indefinite"/>
         </line>
       </g>
-      <!-- HBM Stack -->
-      <g transform="translate(20, 50)">
-        <rect x="0" y="0" width="60" height="20" rx="2" fill="#1f6feb" opacity="0.3" stroke="#58a6ff" stroke-width="1"/>
-        <text x="30" y="14" text-anchor="middle" font-family="monospace" font-size="7" fill="#58a6ff">HBM3 8-Hi</text>
+      <!-- Memory stack visualization -->
+      <g id="memStack" transform="translate(20, 50)">
+        <rect x="0" y="0" width="60" height="25" rx="2" fill="#1f6feb" opacity="0.3" stroke="#58a6ff" stroke-width="1"/>
+        <text x="30" y="16" text-anchor="middle" font-family="monospace" font-size="7" fill="#58a6ff">STACK</text>
         <!-- Stack layers -->
         <g transform="translate(5, 3)">
           <rect x="0" y="0" width="50" height="2" fill="#58a6ff" opacity="0.6">
@@ -214,7 +214,7 @@
         </g>
       </g>
     </g>
-    <text x="60" y="135" text-anchor="middle" font-family="monospace" font-size="9" fill="#a371f7">DDR5/HBM3</text>
+    <text x="60" y="135" text-anchor="middle" font-family="monospace" font-size="9" fill="#a371f7">MEM CTRL</text>
   </g>
   
   <!-- High-Speed SerDes -->
@@ -257,7 +257,7 @@
         </g>
       </g>
     </g>
-    <text x="60" y="135" text-anchor="middle" font-family="monospace" font-size="9" fill="#00d4aa">112G PAM4</text>
+    <text x="60" y="135" text-anchor="middle" font-family="monospace" font-size="9" fill="#00d4aa">HIGH-SPEED IO</text>
   </g>
   
   <!-- Clock Tree Visualization -->
@@ -324,12 +324,12 @@
   </g>
   
   <!-- Chip label -->
-  <text x="200" y="385" text-anchor="middle" font-family="monospace" font-size="10" fill="#00d4aa" font-weight="bold">7nm CUSTOM SoC • 142mm² • 2.4B TRANSISTORS</text>
+  <text x="200" y="385" text-anchor="middle" font-family="monospace" font-size="10" fill="#00d4aa" font-weight="bold">CUSTOM SoC DIE • RTL-TO-GDSII</text>
   
   <!-- Process corner indicator -->
   <g transform="translate(320, 30)">
     <rect x="0" y="0" width="50" height="20" rx="3" fill="#0d1117" stroke="#00d4aa" stroke-width="1"/>
-    <text x="25" y="14" text-anchor="middle" font-family="monospace" font-size="7" fill="#00d4aa">SSG/1.08V</text>
+    <text x="25" y="14" text-anchor="middle" font-family="monospace" font-size="7" fill="#00d4aa">PVT CORNER</text>
     <animate attributeName="opacity" values="1;0.5;1" dur="3s" repeatCount="indefinite"/>
   </g>
 </svg>
