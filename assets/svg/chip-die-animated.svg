@@ -1,0 +1,335 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="substrateGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1f2e"/>
+      <stop offset="50%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="metalGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d4aa"/>
+      <stop offset="50%" stop-color="#00ffcc"/>
+      <stop offset="100%" stop-color="#00d4aa"/>
+    </linearGradient>
+    <linearGradient id="coreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff6b35"/>
+      <stop offset="50%" stop-color="#f7931e"/>
+      <stop offset="100%" stop-color="#ff6b35"/>
+    </linearGradient>
+    <linearGradient id="sramGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#1f6feb"/>
+    </linearGradient>
+    <linearGradient id="ioGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a371f7"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="innerGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <pattern id="metalPattern" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+      <rect width="8" height="8" fill="#0d1117"/>
+      <path d="M0 4 L8 4 M4 0 L4 8" stroke="#00d4aa" stroke-width="0.5" opacity="0.3"/>
+    </pattern>
+    <pattern id="sramPattern" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="4" fill="#0d1117"/>
+      <rect width="2" height="2" x="1" y="1" fill="#58a6ff" opacity="0.6"/>
+    </pattern>
+  </defs>
+  
+  <!-- Substrate -->
+  <rect x="20" y="20" width="360" height="360" rx="15" fill="url(#substrateGrad)" filter="url(#glow)"/>
+  <rect x="20" y="20" width="360" height="360" rx="15" fill="url(#metalPattern)"/>
+  
+  <!-- Metal layers (background routing) -->
+  <g id="metalLayers" opacity="0.4">
+    <rect x="40" y="40" width="320" height="2" fill="url(#metalGrad)">
+      <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="40" y="80" width="320" height="1" fill="url(#metalGrad)">
+      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2.5s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="40" y="120" width="320" height="1" fill="url(#metalGrad)">
+      <animate attributeName="opacity" values="0.1;0.5;0.1" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="40" y="180" width="320" height="2" fill="url(#metalGrad)">
+      <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3.5s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="40" y="240" width="320" height="1" fill="url(#metalGrad)">
+      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2.8s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="40" y="300" width="320" height="1" fill="url(#metalGrad)">
+      <animate attributeName="opacity" values="0.1;0.5;0.1" dur="4.2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="40" y="340" width="320" height="2" fill="url(#metalGrad)">
+      <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3.2s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  
+  <!-- Vertical metal routing -->
+  <g id="verticalMetal" opacity="0.3">
+    <rect x="80" y="40" width="1" height="320" fill="url(#metalGrad)">
+      <animate attributeName="opacity" values="0.2;0.5;0.2" dur="2.7s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="160" y="40" width="1" height="320" fill="url(#metalGrad)">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3.1s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="240" y="40" width="1" height="320" fill="url(#metalGrad)">
+      <animate attributeName="opacity" values="0.1;0.4;0.1" dur="3.8s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="300" y="40" width="1" height="320" fill="url(#metalGrad)">
+      <animate attributeName="opacity" values="0.2;0.5;0.2" dur="2.9s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  
+  <!-- CPU Core Cluster (4 cores) -->
+  <g id="cpuCluster" transform="translate(60, 60)">
+    <rect x="0" y="0" width="120" height="120" rx="8" fill="url(#coreGrad)" filter="url(#innerGlow)">
+      <animate attributeName="opacity" values="0.9;1;0.9" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <!-- Core 0 -->
+    <g transform="translate(10, 10)">
+      <rect x="0" y="0" width="45" height="45" rx="4" fill="#0d1117" stroke="#ff6b35" stroke-width="1"/>
+      <rect x="5" y="5" width="35" height="8" rx="2" fill="#ff6b35" opacity="0.3"/>
+      <rect x="5" y="17" width="20" height="6" rx="1" fill="#00d4aa" opacity="0.5">
+        <animate attributeName="width" values="20;35;20" dur="1.5s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="5" y="27" width="30" height="6" rx="1" fill="#f7931e" opacity="0.4"/>
+      <rect x="5" y="37" width="15" height="6" rx="1" fill="#a371f7" opacity="0.4">
+        <animate attributeName="width" values="15;30;15" dur="2s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+    <!-- Core 1 -->
+    <g transform="translate(65, 10)">
+      <rect x="0" y="0" width="45" height="45" rx="4" fill="#0d1117" stroke="#ff6b35" stroke-width="1"/>
+      <rect x="5" y="5" width="35" height="8" rx="2" fill="#ff6b35" opacity="0.3"/>
+      <rect x="5" y="17" width="25" height="6" rx="1" fill="#00d4aa" opacity="0.5">
+        <animate attributeName="width" values="25;35;25" dur="1.3s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="5" y="27" width="28" height="6" rx="1" fill="#f7931e" opacity="0.4"/>
+      <rect x="5" y="37" width="18" height="6" rx="1" fill="#a371f7" opacity="0.4">
+        <animate attributeName="width" values="18;32;18" dur="1.8s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+    <!-- Core 2 -->
+    <g transform="translate(10, 65)">
+      <rect x="0" y="0" width="45" height="45" rx="4" fill="#0d1117" stroke="#ff6b35" stroke-width="1"/>
+      <rect x="5" y="5" width="35" height="8" rx="2" fill="#ff6b35" opacity="0.3"/>
+      <rect x="5" y="17" width="22" height="6" rx="1" fill="#00d4aa" opacity="0.5">
+        <animate attributeName="width" values="22;35;22" dur="1.7s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="5" y="27" width="32" height="6" rx="1" fill="#f7931e" opacity="0.4"/>
+      <rect x="5" y="37" width="12" height="6" rx="1" fill="#a371f7" opacity="0.4">
+        <animate attributeName="width" values="12;28;12" dur="2.2s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+    <!-- Core 3 -->
+    <g transform="translate(65, 65)">
+      <rect x="0" y="0" width="45" height="45" rx="4" fill="#0d1117" stroke="#ff6b35" stroke-width="1"/>
+      <rect x="5" y="5" width="35" height="8" rx="2" fill="#ff6b35" opacity="0.3"/>
+      <rect x="5" y="17" width="28" height="6" rx="1" fill="#00d4aa" opacity="0.5">
+        <animate attributeName="width" values="28;35;28" dur="1.4s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="5" y="27" width="26" height="6" rx="1" fill="#f7931e" opacity="0.4"/>
+      <rect x="5" y="37" width="20" height="6" rx="1" fill="#a371f7" opacity="0.4">
+        <animate attributeName="width" values="20;34;20" dur="1.9s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+    <!-- L2 Cache label -->
+    <text x="60" y="135" text-anchor="middle" font-family="monospace" font-size="9" fill="#00d4aa">L2: 2MB</text>
+  </g>
+  
+  <!-- AI Accelerator -->
+  <g id="aiAccel" transform="translate(220, 60)">
+    <rect x="0" y="0" width="120" height="120" rx="8" fill="url(#sramGrad)" filter="url(#innerGlow)">
+      <animate attributeName="opacity" values="0.85;1;0.85" dur="2.5s" repeatCount="indefinite"/>
+    </rect>
+    <!-- Systolic array visualization -->
+    <g transform="translate(8, 8)">
+      <rect x="0" y="0" width="104" height="104" fill="none" stroke="#58a6ff" stroke-width="1" stroke-dasharray="4,4"/>
+      <!-- PE Array 8x8 -->
+      <g id="peArray">
+        <rect x="2" y="2" width="100" height="100" fill="url(#sramPattern)"/>
+        <!-- Data flow animation -->
+        <g id="dataFlow">
+          <line x1="2" y1="52" x2="102" y2="52" stroke="#00ffcc" stroke-width="2" opacity="0.8">
+            <animate attributeName="x1" values="2;102;2" dur="2s" repeatCount="indefinite"/>
+            <animate attributeName="x2" values="102;2;102" dur="2s" repeatCount="indefinite"/>
+          </line>
+          <line x1="52" y1="2" x2="52" y2="102" stroke="#ff6b35" stroke-width="2" opacity="0.8">
+            <animate attributeName="y1" values="2;102;2" dur="2.3s" repeatCount="indefinite"/>
+            <animate attributeName="y2" values="102;2;102" dur="2.3s" repeatCount="indefinite"/>
+          </line>
+        </g>
+      </g>
+    </g>
+    <text x="60" y="135" text-anchor="middle" font-family="monospace" font-size="9" fill="#58a6ff">NPU: 512 TOPS</text>
+  </g>
+  
+  <!-- Memory Controller -->
+  <g id="memCtrl" transform="translate(60, 220)">
+    <rect x="0" y="0" width="120" height="100" rx="8" fill="url(#ioGrad)" filter="url(#innerGlow)"/>
+    <g transform="translate(10, 10)">
+      <rect x="0" y="0" width="100" height="80" fill="url(#sramPattern)"/>
+      <!-- Channel 0 -->
+      <g transform="translate(5, 10)">
+        <rect x="0" y="0" width="40" height="25" rx="3" fill="#0d1117" stroke="#a371f7" stroke-width="1"/>
+        <text x="20" y="18" text-anchor="middle" font-family="monospace" font-size="7" fill="#a371f7">CH0</text>
+        <line x1="5" y1="30" x2="35" y2="30" stroke="#00d4aa" stroke-width="2">
+          <animate attributeName="stroke-dashoffset" values="0;-20;0" dur="1s" repeatCount="indefinite"/>
+          <animate attributeName="stroke-dasharray" values="5,5;10,10;5,5" dur="1s" repeatCount="indefinite"/>
+        </line>
+      </g>
+      <!-- Channel 1 -->
+      <g transform="translate(55, 10)">
+        <rect x="0" y="0" width="40" height="25" rx="3" fill="#0d1117" stroke="#a371f7" stroke-width="1"/>
+        <text x="20" y="18" text-anchor="middle" font-family="monospace" font-size="7" fill="#a371f7">CH1</text>
+        <line x1="5" y1="30" x2="35" y2="30" stroke="#00d4aa" stroke-width="2">
+          <animate attributeName="stroke-dashoffset" values="0;-20;0" dur="1.2s" repeatCount="indefinite"/>
+          <animate attributeName="stroke-dasharray" values="5,5;10,10;5,5" dur="1.2s" repeatCount="indefinite"/>
+        </line>
+      </g>
+      <!-- HBM Stack -->
+      <g transform="translate(20, 50)">
+        <rect x="0" y="0" width="60" height="20" rx="2" fill="#1f6feb" opacity="0.3" stroke="#58a6ff" stroke-width="1"/>
+        <text x="30" y="14" text-anchor="middle" font-family="monospace" font-size="7" fill="#58a6ff">HBM3 8-Hi</text>
+        <!-- Stack layers -->
+        <g transform="translate(5, 3)">
+          <rect x="0" y="0" width="50" height="2" fill="#58a6ff" opacity="0.6">
+            <animate attributeName="opacity" values="0.3;0.8;0.3" dur="1.5s" repeatCount="indefinite"/>
+          </rect>
+          <rect x="0" y="3" width="50" height="2" fill="#58a6ff" opacity="0.5">
+            <animate attributeName="opacity" values="0.4;0.9;0.4" dur="1.5s" repeatCount="indefinite"/>
+          </rect>
+          <rect x="0" y="6" width="50" height="2" fill="#58a6ff" opacity="0.4">
+            <animate attributeName="opacity" values="0.2;0.7;0.2" dur="1.5s" repeatCount="indefinite"/>
+          </rect>
+        </g>
+      </g>
+    </g>
+    <text x="60" y="135" text-anchor="middle" font-family="monospace" font-size="9" fill="#a371f7">DDR5/HBM3</text>
+  </g>
+  
+  <!-- High-Speed SerDes -->
+  <g id="serdes" transform="translate(220, 220)">
+    <rect x="0" y="0" width="120" height="100" rx="8" fill="#1f6feb" opacity="0.2" stroke="#00d4aa" stroke-width="1" filter="url(#innerGlow)"/>
+    <g transform="translate(10, 10)">
+      <!-- TX Path -->
+      <g id="txPath">
+        <text x="5" y="15" font-family="monospace" font-size="7" fill="#00d4aa">TX</text>
+        <rect x="5" y="18" width="25" height="15" rx="2" fill="#0d1117" stroke="#ff6b35" stroke-width="1"/>
+        <text x="17.5" y="29" text-anchor="middle" font-family="monospace" font-size="6" fill="#ff6b35">FFE/DFE</text>
+        <rect x="35" y="18" width="20" height="15" rx="2" fill="#0d1117" stroke="#f7931e" stroke-width="1"/>
+        <text x="45" y="29" text-anchor="middle" font-family="monospace" font-size="6" fill="#f7931e">VGA</text>
+        <rect x="60" y="18" width="25" height="15" rx="2" fill="#0d1117" stroke="#00d4aa" stroke-width="1"/>
+        <text x="72.5" y="29" text-anchor="middle" font-family="monospace" font-size="6" fill="#00d4aa">DRIVER</text>
+        <!-- Signal animation -->
+        <polyline points="5,50 30,50 30,33 55,33 55,50 85,50" fill="none" stroke="#00d4aa" stroke-width="1.5" opacity="0.6" stroke-dasharray="4,3">
+          <animate attributeName="stroke-dashoffset" values="0;-30;0" dur="0.8s" repeatCount="indefinite"/>
+        </polyline>
+      </g>
+      <!-- RX Path -->
+      <g id="rxPath" transform="translate(0, 50)">
+        <text x="5" y="15" font-family="monospace" font-size="7" fill="#58a6ff">RX</text>
+        <rect x="5" y="18" width="25" height="15" rx="2" fill="#0d1117" stroke="#58a6ff" stroke-width="1"/>
+        <text x="17.5" y="29" text-anchor="middle" font-family="monospace" font-size="6" fill="#58a6ff">CTLE</text>
+        <rect x="35" y="18" width="20" height="15" rx="2" fill="#0d1117" stroke="#a371f7" stroke-width="1"/>
+        <text x="45" y="29" text-anchor="middle" font-family="monospace" font-size="6" fill="#a371f7">DFE</text>
+        <rect x="60" y="18" width="25" height="15" rx="2" fill="#0d1117" stroke="#00ffcc" stroke-width="1"/>
+        <text x="72.5" y="29" text-anchor="middle" font-family="monospace" font-size="6" fill="#00ffcc">CDR</text>
+        <!-- Eye diagram animation -->
+        <g transform="translate(90, 25)">
+          <ellipse cx="0" cy="0" rx="8" ry="5" fill="none" stroke="#00ffcc" stroke-width="1.5" opacity="0.5">
+            <animate attributeName="rx" values="8;12;8" dur="1.5s" repeatCount="indefinite"/>
+            <animate attributeName="ry" values="5;8;5" dur="1.5s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.3;0.7;0.3" dur="1.5s" repeatCount="indefinite"/>
+          </ellipse>
+          <ellipse cx="0" cy="0" rx="4" ry="2.5" fill="#00ffcc" opacity="0.3">
+            <animate attributeName="opacity" values="0.1;0.5;0.1" dur="1.5s" repeatCount="indefinite"/>
+          </ellipse>
+        </g>
+      </g>
+    </g>
+    <text x="60" y="135" text-anchor="middle" font-family="monospace" font-size="9" fill="#00d4aa">112G PAM4</text>
+  </g>
+  
+  <!-- Clock Tree Visualization -->
+  <g id="clockTree" transform="translate(200, 20)">
+    <circle cx="0" cy="0" r="6" fill="#ff6b35" filter="url(#glow)">
+      <animate attributeName="r" values="6;8;6" dur="1s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="1s" repeatCount="indefinite"/>
+    </circle>
+    <!-- H-tree branches -->
+    <g stroke="#ff6b35" stroke-width="2" opacity="0.7">
+      <line x1="0" y1="6" x2="0" y2="20">
+        <animate attributeName="stroke-dashoffset" values="0;-10;0" dur="0.5s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-dasharray" values="4,4;8,8;4,4" dur="0.5s" repeatCount="indefinite"/>
+      </line>
+      <line x1="-14" y1="20" x2="14" y2="20">
+        <animate attributeName="stroke-dashoffset" values="0;-10;0" dur="0.5s" repeatCount="indefinite"/>
+      </line>
+      <line x1="-14" y1="20" x2="-14" y2="34">
+        <animate attributeName="stroke-dashoffset" values="0;-10;0" dur="0.5s" repeatCount="indefinite"/>
+      </line>
+      <line x1="14" y1="20" x2="14" y2="34">
+        <animate attributeName="stroke-dashoffset" values="0;-10;0" dur="0.5s" repeatCount="indefinite"/>
+      </line>
+    </g>
+    <!-- Leaf nodes (clock sinks) -->
+    <g id="clockSinks">
+      <circle cx="-14" cy="34" r="3" fill="#00d4aa">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="0.8s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="14" cy="34" r="3" fill="#00d4aa">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="0.8s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    <text x="0" y="-12" text-anchor="middle" font-family="monospace" font-size="7" fill="#ff6b35">CLK</text>
+  </g>
+  
+  <!-- Power Grid Visualization -->
+  <g id="powerGrid" opacity="0.15">
+    <rect x="30" y="30" width="340" height="2" fill="#ff6b35"/>
+    <rect x="30" y="368" width="340" height="2" fill="#ff6b35"/>
+    <rect x="30" y="30" width="2" height="340" fill="#ff6b35"/>
+    <rect x="368" y="30" width="2" height="340" fill="#ff6b35"/>
+    <!-- Internal power stripes -->
+    <g stroke="#ff6b35" stroke-width="1">
+      <line x1="100" y1="30" x2="100" y2="368">
+        <animate attributeName="opacity" values="0.1;0.3;0.1" dur="4s" repeatCount="indefinite"/>
+      </line>
+      <line x1="200" y1="30" x2="200" y2="368">
+        <animate attributeName="opacity" values="0.15;0.35;0.15" dur="3.5s" repeatCount="indefinite"/>
+      </line>
+      <line x1="300" y1="30" x2="300" y2="368">
+        <animate attributeName="opacity" values="0.1;0.3;0.1" dur="4.2s" repeatCount="indefinite"/>
+      </line>
+      <line x1="30" y1="100" x2="368" y2="100">
+        <animate attributeName="opacity" values="0.1;0.3;0.1" dur="3.8s" repeatCount="indefinite"/>
+      </line>
+      <line x1="30" y1="200" x2="368" y2="200">
+        <animate attributeName="opacity" values="0.15;0.35;0.15" dur="4.1s" repeatCount="indefinite"/>
+      </line>
+      <line x1="30" y1="300" x2="368" y2="300">
+        <animate attributeName="opacity" values="0.1;0.3;0.1" dur="3.7s" repeatCount="indefinite"/>
+      </line>
+    </g>
+  </g>
+  
+  <!-- Chip label -->
+  <text x="200" y="385" text-anchor="middle" font-family="monospace" font-size="10" fill="#00d4aa" font-weight="bold">7nm CUSTOM SoC • 142mm² • 2.4B TRANSISTORS</text>
+  
+  <!-- Process corner indicator -->
+  <g transform="translate(320, 30)">
+    <rect x="0" y="0" width="50" height="20" rx="3" fill="#0d1117" stroke="#00d4aa" stroke-width="1"/>
+    <text x="25" y="14" text-anchor="middle" font-family="monospace" font-size="7" fill="#00d4aa">SSG/1.08V</text>
+    <animate attributeName="opacity" values="1;0.5;1" dur="3s" repeatCount="indefinite"/>
+  </g>
+</svg>

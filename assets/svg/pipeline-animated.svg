@@ -1,0 +1,314 @@
+<svg width="800" height="200" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pipeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff6b35"/>
+      <stop offset="25%" stop-color="#f7931e"/>
+      <stop offset="50%" stop-color="#00d4aa"/>
+      <stop offset="75%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#a371f7"/>
+    </linearGradient>
+    <linearGradient id="stageGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#161b22"/>
+      <stop offset="100%" stop-color="#0d1117"/>
+    </linearGradient>
+    <filter id="stageGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="dataGlow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="200" fill="#0d1117"/>
+  <rect width="800" height="200" fill="url(#pipeGrad)" opacity="0.02"/>
+  
+  <!-- Pipeline Stages -->
+  <g font-family="monospace" font-size="11">
+    <!-- FETCH -->
+    <g id="fetchStage" transform="translate(20, 20)">
+      <rect x="0" y="0" width="100" height="160" rx="6" fill="url(#stageGrad)" stroke="#ff6b35" stroke-width="1.5" filter="url(#stageGlow)"/>
+      <text x="50" y="20" text-anchor="middle" fill="#ff6b35" font-weight="bold">FETCH</text>
+      <text x="50" y="35" text-anchor="middle" fill="#8b949e" font-size="8">8-wide</text>
+      
+      <!-- Instruction cache -->
+      <rect x="10" y="45" width="80" height="50" rx="3" fill="#0d1117" stroke="#ff6b35" stroke-width="1" opacity="0.5"/>
+      <text x="50" y="65" text-anchor="middle" fill="#ff6b35" font-size="9">I-CACHE</text>
+      <text x="50" y="80" text-anchor="middle" fill="#8b949e" font-size="7">64 KB</text>
+      
+      <!-- Branch Predictor -->
+      <rect x="10" y="105" width="80" height="45" rx="3" fill="#0d1117" stroke="#f7931e" stroke-width="1" opacity="0.5"/>
+      <text x="50" y="122" text-anchor="middle" fill="#f7931e" font-size="9">BR PRED</text>
+      <text x="50" y="137" text-anchor="middle" fill="#8b949e" font-size="7">TAGE-SC-L</text>
+      
+      <!-- Instruction flow animation -->
+      <g id="fetchFlow">
+        <circle cx="50" cy="155" r="4" fill="#ff6b35" filter="url(#dataGlow)">
+          <animate attributeName="cy" values="155;45;155" dur="2s" repeatCount="indefinite"/>
+          <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="50" cy="155" r="3" fill="#ff6b35" filter="url(#dataGlow)">
+          <animate attributeName="cy" values="155;45;155" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+          <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+        </circle>
+        <circle cx="50" cy="155" r="2" fill="#ff6b35" filter="url(#dataGlow)">
+          <animate attributeName="cy" values="155;45;155" dur="2s" repeatCount="indefinite" begin="1s"/>
+          <animate attributeName="r" values="2;4;2" dur="2s" repeatCount="indefinite" begin="1s"/>
+        </circle>
+      </g>
+    </g>
+    
+    <!-- Arrow -->
+    <g transform="translate(125, 95)">
+      <polygon points="0,0 20,-8 20,8" fill="#ff6b35" opacity="0.7"/>
+      <line x1="0" y1="0" x2="20" y2="0" stroke="#ff6b35" stroke-width="2" stroke-dasharray="5,3">
+        <animate attributeName="stroke-dashoffset" values="0;-20;0" dur="1s" repeatCount="indefinite"/>
+      </line>
+    </g>
+    
+    <!-- DECODE -->
+    <g id="decodeStage" transform="translate(150, 20)">
+      <rect x="0" y="0" width="100" height="160" rx="6" fill="url(#stageGrad)" stroke="#f7931e" stroke-width="1.5" filter="url(#stageGlow)"/>
+      <text x="50" y="20" text-anchor="middle" fill="#f7931e" font-weight="bold">DECODE</text>
+      <text x="50" y="35" text-anchor="middle" fill="#8b949e" font-size="8">6-wide</text>
+      
+      <rect x="10" y="45" width="80" height="50" rx="3" fill="#0d1117" stroke="#f7931e" stroke-width="1" opacity="0.5"/>
+      <text x="50" y="65" text-anchor="middle" fill="#f7931e" font-size="9">DECODER</text>
+      <text x="50" y="80" text-anchor="middle" fill="#8b949e" font-size="7">RV64GC</text>
+      
+      <rect x="10" y="105" width="80" height="45" rx="3" fill="#0d1117" stroke="#ff6b35" stroke-width="1" opacity="0.5"/>
+      <text x="50" y="122" text-anchor="middle" fill="#ff6b35" font-size="9">RENAME</text>
+      <text x="50" y="137" text-anchor="middle" fill="#8b949e" font-size="7">128 PRF</text>
+      
+      <g id="decodeFlow">
+        <circle cx="50" cy="155" r="4" fill="#f7931e" filter="url(#dataGlow)">
+          <animate attributeName="cy" values="155;45;155" dur="2s" repeatCount="indefinite"/>
+          <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="50" cy="155" r="3" fill="#f7931e" filter="url(#dataGlow)">
+          <animate attributeName="cy" values="155;45;155" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+        </circle>
+        <circle cx="50" cy="155" r="2" fill="#f7931e" filter="url(#dataGlow)">
+          <animate attributeName="cy" values="155;45;155" dur="2s" repeatCount="indefinite" begin="1s"/>
+        </circle>
+      </g>
+    </g>
+    
+    <!-- Arrow -->
+    <g transform="translate(255, 95)">
+      <polygon points="0,0 20,-8 20,8" fill="#f7931e" opacity="0.7"/>
+      <line x1="0" y1="0" x2="20" y2="0" stroke="#f7931e" stroke-width="2" stroke-dasharray="5,3">
+        <animate attributeName="stroke-dashoffset" values="0;-20;0" dur="1s" repeatCount="indefinite"/>
+      </line>
+    </g>
+    
+    <!-- DISPATCH/ISSUE -->
+    <g id="issueStage" transform="translate(280, 20)">
+      <rect x="0" y="0" width="120" height="160" rx="6" fill="url(#stageGrad)" stroke="#00d4aa" stroke-width="1.5" filter="url(#stageGlow)"/>
+      <text x="60" y="20" text-anchor="middle" fill="#00d4aa" font-weight="bold">DISPATCH</text>
+      <text x="60" y="35" text-anchor="middle" fill="#8b949e" font-size="8">Issue Queues</text>
+      
+      <g transform="translate(10, 45)">
+        <!-- INT Queue -->
+        <rect x="0" y="0" width="45" height="50" rx="3" fill="#0d1117" stroke="#00d4aa" stroke-width="1" opacity="0.5"/>
+        <text x="22.5" y="15" text-anchor="middle" fill="#00d4aa" font-size="8">INT IQ</text>
+        <text x="22.5" y="28" text-anchor="middle" fill="#8b949e" font-size="7">64 entries</text>
+        <rect x="5" y="35" width="35" height="6" rx="1" fill="#00d4aa" opacity="0.3">
+          <animate attributeName="width" values="35;10;35" dur="1.5s" repeatCount="indefinite"/>
+        </rect>
+        
+        <!-- FP Queue -->
+        <rect x="55" y="0" width="45" height="50" rx="3" fill="#0d1117" stroke="#58a6ff" stroke-width="1" opacity="0.5"/>
+        <text x="77.5" y="15" text-anchor="middle" fill="#58a6ff" font-size="8">FP IQ</text>
+        <text x="77.5" y="28" text-anchor="middle" fill="#8b949e" font-size="7">48 entries</text>
+        <rect x="60" y="35" width="35" height="6" rx="1" fill="#58a6ff" opacity="0.3">
+          <animate attributeName="width" values="35;10;35" dur="1.7s" repeatCount="indefinite"/>
+        </rect>
+      </g>
+      
+      <g transform="translate(10, 105)">
+        <!-- LSQ -->
+        <rect x="0" y="0" width="45" height="45" rx="3" fill="#0d1117" stroke="#a371f7" stroke-width="1" opacity="0.5"/>
+        <text x="22.5" y="15" text-anchor="middle" fill="#a371f7" font-size="8">LSQ</text>
+        <text x="22.5" y="28" text-anchor="middle" fill="#8b949e" font-size="7">72 entries</text>
+        <rect x="5" y="35" width="35" height="6" rx="1" fill="#a371f7" opacity="0.3">
+          <animate attributeName="width" values="35;10;35" dur="1.3s" repeatCount="indefinite"/>
+        </rect>
+        
+        <!-- BR Queue -->
+        <rect x="55" y="0" width="45" height="45" rx="3" fill="#0d1117" stroke="#ff6b35" stroke-width="1" opacity="0.5"/>
+        <text x="77.5" y="15" text-anchor="middle" fill="#ff6b35" font-size="8">BR IQ</text>
+        <text x="77.5" y="28" text-anchor="middle" fill="#8b949e" font-size="7">16 entries</text>
+        <rect x="60" y="35" width="35" height="6" rx="1" fill="#ff6b35" opacity="0.3">
+          <animate attributeName="width" values="35;10;35" dur="2s" repeatCount="indefinite"/>
+        </rect>
+      </g>
+      
+      <g id="issueFlow">
+        <circle cx="60" cy="155" r="4" fill="#00d4aa" filter="url(#dataGlow)">
+          <animate attributeName="cy" values="155;45;155" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="60" cy="155" r="3" fill="#00d4aa" filter="url(#dataGlow)">
+          <animate attributeName="cy" values="155;45;155" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+        </circle>
+      </g>
+    </g>
+    
+    <!-- Arrow -->
+    <g transform="translate(405, 95)">
+      <polygon points="0,0 20,-8 20,8" fill="#00d4aa" opacity="0.7"/>
+      <line x1="0" y1="0" x2="20" y2="0" stroke="#00d4aa" stroke-width="2" stroke-dasharray="5,3">
+        <animate attributeName="stroke-dashoffset" values="0;-20;0" dur="1s" repeatCount="indefinite"/>
+      </line>
+    </g>
+    
+    <!-- EXECUTE -->
+    <g id="execStage" transform="translate(430, 20)">
+      <rect x="0" y="0" width="140" height="160" rx="6" fill="url(#stageGrad)" stroke="#58a6ff" stroke-width="1.5" filter="url(#stageGlow)"/>
+      <text x="70" y="20" text-anchor="middle" fill="#58a6ff" font-weight="bold">EXECUTE</text>
+      <text x="70" y="35" text-anchor="middle" fill="#8b949e" font-size="8">Clusters</text>
+      
+      <g transform="translate(10, 45)">
+        <!-- ALU Cluster -->
+        <g id="aluCluster">
+          <rect x="0" y="0" width="60" height="50" rx="3" fill="#0d1117" stroke="#58a6ff" stroke-width="1" opacity="0.5"/>
+          <text x="30" y="15" text-anchor="middle" fill="#58a6ff" font-size="8">4× ALU</text>
+          <text x="30" y="28" text-anchor="middle" fill="#8b949e" font-size="7">INT/MUL/DIV</text>
+          <g transform="translate(5, 35)">
+            <rect x="0" y="0" width="10" height="10" rx="2" fill="#58a6ff" opacity="0.5">
+              <animate attributeName="opacity" values="0.5;1;0.5" dur="0.8s" repeatCount="indefinite"/>
+            </rect>
+            <rect x="15" y="0" width="10" height="10" rx="2" fill="#58a6ff" opacity="0.5">
+              <animate attributeName="opacity" values="0.5;1;0.5" dur="0.8s" repeatCount="indefinite" begin="0.2s"/>
+            </rect>
+            <rect x="30" y="0" width="10" height="10" rx="2" fill="#58a6ff" opacity="0.5">
+              <animate attributeName="opacity" values="0.5;1;0.5" dur="0.8s" repeatCount="indefinite" begin="0.4s"/>
+            </rect>
+            <rect x="45" y="0" width="10" height="10" rx="2" fill="#58a6ff" opacity="0.5">
+              <animate attributeName="opacity" values="0.5;1;0.5" dur="0.8s" repeatCount="indefinite" begin="0.6s"/>
+            </rect>
+          </g>
+        </g>
+        
+        <!-- FPU Cluster -->
+        <g id="fpuCluster" transform="translate(70, 0)">
+          <rect x="0" y="0" width="60" height="50" rx="3" fill="#0d1117" stroke="#a371f7" stroke-width="1" opacity="0.5"/>
+          <text x="30" y="15" text-anchor="middle" fill="#a371f7" font-size="8">2× FPU</text>
+          <text x="30" y="28" text-anchor="middle" fill="#8b949e" font-size="7">FMA/SQRT</text>
+          <g transform="translate(5, 35)">
+            <rect x="0" y="0" width="20" height="10" rx="2" fill="#a371f7" opacity="0.5">
+              <animate attributeName="opacity" values="0.5;1;0.5" dur="1.2s" repeatCount="indefinite"/>
+            </rect>
+            <rect x="30" y="0" width="20" height="10" rx="2" fill="#a371f7" opacity="0.5">
+              <animate attributeName="opacity" values="0.5;1;0.5" dur="1.2s" repeatCount="indefinite" begin="0.6s"/>
+            </rect>
+          </g>
+        </g>
+      </g>
+      
+      <g transform="translate(10, 105)">
+        <!-- LSU Cluster -->
+        <g id="lsuCluster">
+          <rect x="0" y="0" width="60" height="45" rx="3" fill="#0d1117" stroke="#00d4aa" stroke-width="1" opacity="0.5"/>
+          <text x="30" y="15" text-anchor="middle" fill="#00d4aa" font-size="8">2× LSU</text>
+          <text x="30" y="28" text-anchor="middle" fill="#8b949e" font-size="7">LD/ST</text>
+          <rect x="5" y="35" width="50" height="6" rx="1" fill="#00d4aa" opacity="0.3">
+            <animate attributeName="width" values="50;10;50" dur="1.5s" repeatCount="indefinite"/>
+          </rect>
+        </g>
+        
+        <!-- Branch Unit -->
+        <g id="brCluster" transform="translate(70, 0)">
+          <rect x="0" y="0" width="60" height="45" rx="3" fill="#0d1117" stroke="#ff6b35" stroke-width="1" opacity="0.5"/>
+          <text x="30" y="15" text-anchor="middle" fill="#ff6b35" font-size="8">1× BR</text>
+          <text x="30" y="28" text-anchor="middle" fill="#8b949e" font-size="7">RESOLVE</text>
+          <circle cx="30" cy="38" r="5" fill="#ff6b35" opacity="0.5">
+            <animate attributeName="r" values="5;8;5" dur="1s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.3;0.8;0.3" dur="1s" repeatCount="indefinite"/>
+          </circle>
+        </g>
+      </g>
+      
+      <g id="execFlow">
+        <circle cx="70" cy="155" r="4" fill="#58a6ff" filter="url(#dataGlow)">
+          <animate attributeName="cy" values="155;45;155" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="70" cy="155" r="3" fill="#58a6ff" filter="url(#dataGlow)">
+          <animate attributeName="cy" values="155;45;155" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+        </circle>
+      </g>
+    </g>
+    
+    <!-- Arrow -->
+    <g transform="translate(575, 95)">
+      <polygon points="0,0 20,-8 20,8" fill="#58a6ff" opacity="0.7"/>
+      <line x1="0" y1="0" x2="20" y2="0" stroke="#58a6ff" stroke-width="2" stroke-dasharray="5,3">
+        <animate attributeName="stroke-dashoffset" values="0;-20;0" dur="1s" repeatCount="indefinite"/>
+      </line>
+    </g>
+    
+    <!-- WRITEBACK/RETIRE -->
+    <g id="wbStage" transform="translate(600, 20)">
+      <rect x="0" y="0" width="100" height="160" rx="6" fill="url(#stageGrad)" stroke="#a371f7" stroke-width="1.5" filter="url(#stageGlow)"/>
+      <text x="50" y="20" text-anchor="middle" fill="#a371f7" font-weight="bold">WB/RETIRE</text>
+      <text x="50" y="35" text-anchor="middle" fill="#8b949e" font-size="8">8-wide</text>
+      
+      <rect x="10" y="45" width="80" height="80" rx="3" fill="#0d1117" stroke="#a371f7" stroke-width="1" opacity="0.5"/>
+      <text x="50" y="70" text-anchor="middle" fill="#a371f7" font-size="9">REORDER BUF</text>
+      <text x="50" y="85" text-anchor="middle" fill="#8b949e" font-size="7">256 entries</text>
+      <rect x="15" y="95" width="70" height="12" rx="2" fill="#a371f7" opacity="0.3">
+        <animate attributeName="width" values="70;20;70" dur="2s" repeatCount="indefinite"/>
+      </rect>
+      <text x="50" y="112" text-anchor="middle" fill="#8b949e" font-size="7">In-order commit</text>
+      
+      <rect x="10" y="135" width="80" height="15" rx="3" fill="#0d1117" stroke="#00d4aa" stroke-width="1" opacity="0.5"/>
+      <text x="50" y="147" text-anchor="middle" fill="#00d4aa" font-size="8">ARCH REGFILE</text>
+      
+      <g id="wbFlow">
+        <circle cx="50" cy="155" r="4" fill="#a371f7" filter="url(#dataGlow)">
+          <animate attributeName="cy" values="155;45;155" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="50" cy="155" r="3" fill="#a371f7" filter="url(#dataGlow)">
+          <animate attributeName="cy" values="155;45;155" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+        </circle>
+        <circle cx="50" cy="155" r="2" fill="#a371f7" filter="url(#dataGlow)">
+          <animate attributeName="cy" values="155;45;155" dur="2s" repeatCount="indefinite" begin="1s"/>
+        </circle>
+      </g>
+    </g>
+    
+    <!-- Forward paths (bypass network) -->
+    <g id="bypassNetwork" stroke="#00ffcc" stroke-width="1.5" opacity="0.4" stroke-dasharray="4,4">
+      <path d="M 430,120 Q 515,60 600,120">
+        <animate attributeName="stroke-dashoffset" values="0;-50;0" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 570,100 Q 515,160 430,100">
+        <animate attributeName="stroke-dashoffset" values="0;-50;0" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+      </path>
+    </g>
+    
+    <!-- Performance counters -->
+    <g transform="translate(710, 20)" font-size="9">
+      <rect x="0" y="0" width="80" height="160" rx="6" fill="url(#stageGrad)" stroke="#8b949e" stroke-width="1"/>
+      <text x="40" y="20" text-anchor="middle" fill="#8b949e" font-weight="bold">METRICS</text>
+      
+      <g transform="translate(10, 35)">
+        <text x="0" y="0" fill="#00d4aa">IPC: <tspan id="ipcVal" fill="#ff6b35">3.1</tspan></text>
+        <text x="0" y="20" fill="#58a6ff">Freq: <tspan fill="#f7931e">3.2 GHz</tspan></text>
+        <text x="0" y="40" fill="#a371f7">Branch: <tspan fill="#00ffcc">96.8%</tspan></text>
+        <text x="0" y="60" fill="#ff6b35">L1 Miss: <tspan fill="#f7931e">2.1%</tspan></text>
+        <text x="0" y="80" fill="#00d4aa">Power: <tspan fill="#58a6ff">1.42W</tspan></text>
+        <text x="0" y="100" fill="#f7931e">Area: <tspan fill="#a371f7">3.8 mm²</tspan></text>
+      </g>
+      
+<!-- Live IPC counter (updated on GitHub Actions schedule) -->
+  <text x="40" y="150" text-anchor="middle" fill="#00d4aa" font-size="10" font-weight="bold">3.12</text>
+    </g>
+  </g>
+</svg>
