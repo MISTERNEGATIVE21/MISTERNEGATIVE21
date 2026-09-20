@@ -1,6 +1,6 @@
 <div align="center">
 
-# Hi there! I'm Rajarshi 👋
+# Hi there! 👋
 
 ### Razor_C · Mister Negative
 
@@ -20,7 +20,6 @@
 ## About me
 
 ```yaml
-name: Rajarshi Mondal
 nickname: Razor_C / Mister Negative
 location: India
 current_focus: Custom VLSI chip design
