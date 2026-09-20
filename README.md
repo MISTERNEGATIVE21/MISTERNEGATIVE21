@@ -1,9 +1,6 @@
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/MISTERNEGATIVE21/MISTERNEGATIVE21/master/tenor.gif">
-  <img align="right" src="tenor.gif" width="340" alt="chip animation" />
-</picture>
+<img src="tenor.gif" width="340" alt="chip animation" />
 
 # 🔬 Razor_C / Mister Negative
 
@@ -22,8 +19,6 @@
 <a href="https://t.me/BURNINGFIREBLAZE"><img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram" /></a>
 
 </div>
-
-<br clear="all" />
 
 ## 👤 About me
 
@@ -63,7 +58,6 @@ hobbies: Gaming, Linux customization, cloud solutions
 <img src="assets/svg/chip-die-animated.svg" alt="Animated SoC die visualization" width="400" />
 <img src="assets/svg/pipeline-animated.svg" alt="Animated processor pipeline" width="720" />
 <img src="assets/svg/clock-tree.svg" alt="Animated clock tree distribution" width="720" />
-<img src="assets/svg/skill-radar.svg" alt="Skill radar" width="400" />
 
 </div>
 
